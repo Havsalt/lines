@@ -1,22 +1,28 @@
-## Line counter
-#### Instructions:
+# Lines
+
+Count how many lines your project has
+
+* License: MIT
+* OS: Windows
+
+## Setup Instructions
 
 1. Add directory `lines` to `PATH` in `Enviroment variables`
 2. Open a `command line` to change the `current working directory` to the one you wish to examine
-2. Run `'lines'` to execute command
+3. Run `'lines'` to execute command
 
-#### Arguments:
+## Arguments and Flags
 
-* `extensions`          optional, only counts files with specified extension(s)
+### Positional Arguments
 
-#### Flags:
+* `extensions` (optional) Only counts files with specified extension(s)
 
-* `-r` [depth]          recursive mode, optional max depth level
-* `-f` `--fast`         skips display animations
-* `-i` `--ignore-blank` ignores blank lines `\n`
+### Optional Flags
+
+* `-r` DEPTH            Recursive mode, optional max depth level
+* `-f` `--fast`         Skips display animations
+* `-i` `--ignore-blank` Ignores blank lines `\n`
 
 ---
 
 Note: Default uses `Windows` with `.bat` file
-
----
