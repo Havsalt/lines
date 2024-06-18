@@ -15,13 +15,13 @@ Count how many lines your project has
 
 ### Positional Arguments
 
-* `extensions` optional, only counts files with specified extension(s)
+* `extensions` (optional) Only counts files with specified extension(s)
 
 ### Optional Flags
 
-* `-r` [depth]          recursive mode, optional max depth level
-* `-f` `--fast`         skips display animations
-* `-i` `--ignore-blank` ignores blank lines `\n`
+* `-r` DEPTH            Recursive mode, optional max depth level
+* `-f` `--fast`         Skips display animations
+* `-i` `--ignore-blank` Ignores blank lines `\n`
 
 ---
 
