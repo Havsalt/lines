@@ -1,3 +1,14 @@
+"""
+lines
+----
+
+Count how many lines your project has
+"""
+
+from __future__ import annotations
+
+__version__ = "0.2.0"
+
 import argparse
 import os
 import sys
@@ -25,18 +36,39 @@ ERROR = "\u001b[31;1m" + "#"
 
 # argument parser
 parser = argparse.ArgumentParser(
-    prog="lines", description="== Count lines ==")
-parser.add_argument("extensions", nargs="*", default=ANY_EXTENSION,
-                    help="filter extensions of files. defaults to any")
-parser.add_argument("-r", action="store", type=int, nargs="?",
-                    dest="depth", default=1, help="count lines recursively. depth level is optional")
-parser.add_argument("-f", "--fast", action="store_true",
-                    dest="fast_mode", help="compute next file without delay")
-parser.add_argument("-i", "--ignore-blank", action="store_true",
-                    dest="ignore_blank", help="ignore empty lines")
+    prog="lines",
+    description="== Count lines =="
+)
+parser.add_argument(
+    "-r", "--recursive",
+    action="store",
+    type=int,
+    nargs="?",
+    dest="depth",
+    default=1,
+    help="Count lines recursively. Depth level is optional"
+)
+parser.add_argument(
+    "-f", "--fast",
+    action="store_true",
+    dest="fast_mode",
+    help="Compute next file without delay"
+)
+parser.add_argument(
+    "-i", "--ignore-blank",
+    action="store_true",
+    dest="ignore_blank",
+    help="Fgnore empty lines"
+)
+parser.add_argument(
+    "extensions",
+    nargs="*",
+    default=ANY_EXTENSION,
+    help="Filter extensions of files. defaults to any"
+)
 
 
-def main() -> None:
+def main() -> int:
     args = parser.parse_args()
     lines = 0
     files = 0
@@ -122,6 +154,8 @@ def main() -> None:
         for item in content:
             sys.stdout.write(item)
             time.sleep(DELTA)
+    
+    return 0
 
 
 if __name__ == "__main__":
